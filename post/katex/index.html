@@ -1,8 +1,8 @@
 
 <!DOCTYPE html>
-<html lang="en" data-figures="">
+<html lang="en" data-figures="true" class="page">
   <head>
-<title>404 Page not found | longfellow</title>
+<title>数学公式常用写法 | longfellow</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,20 +10,20 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="" />
+<meta name="description" content="Article description." />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@green_pook">
-<meta name="twitter:title" content="404 Page not found" />
-<meta property="og:url" content="https://spkywood.github.io/404.html" />
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="" />
+<meta name="twitter:title" content="数学公式常用写法" />
+<meta property="og:url" content="https://spkywood.github.io/post/katex/" />
+<meta property="og:title" content="数学公式常用写法" />
+<meta property="og:description" content="Article description." />
 <meta property="og:image" content="https://spkywood.github.io/images/thumbnail.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://spkywood.github.io/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://spkywood.github.io/icons/favicon-32x32.png">
 <link rel="manifest" href="https://spkywood.github.io/icons/site.webmanifest">
 
-<link rel="canonical" href="https://spkywood.github.io/404.html">
+<link rel="canonical" href="https://spkywood.github.io/post/katex/">
 
     
 
@@ -40,8 +40,9 @@
   
   
     
+    
   
-  <body data-code="100" data-lines="false" id="documentTop">
+  <body data-code="10" data-lines="false" id="documentTop">
 
 <header class="nav_header" >
   <nav class="nav"><a href='https://spkywood.github.io/' class="nav_brand nav_item" title="longfellow">longfellow
@@ -101,12 +102,198 @@
 </header>
 
     <main>
-<div class="never wrap">
-  <h1>Lost</h1>
-  <p class="pale">We couldn&#39;t find the page you&#39;re looking for</p><br>
-  <div class="button btn_back">Go Back</div>
+
+<div class="grid-inverse wrap content">
+  <article class="post_content">
+    <h1 class="post_title">数学公式常用写法</h1>
+<div class="post_meta">
+  <span><svg class="icon">
+  <title>calendar</title>
+  <use xlink:href="#calendar"></use>
+</svg>
+</span>
+  <span class="post_date">
+    2022-05-15</span>
+  <span>&nbsp;· <a href='https://spkywood.github.io/tags/katex' title="KaTex" class="post_tag button button_translucent">KaTex
+    </a>
+  </span>
+</div>
+    <div class="post_body"><p>在网页中展示数学公式，使 <code>Hugo</code> 支持 <code>LaTex</code> 形式。已经生成好的静态页面中，使用 <code>JavaScript</code> 来渲染 <code>LaTeX</code> 形式的数学公式，本博客采用 <code>KaTex</code> 来渲染前端数学公式。</p>
+<p>数学公式有行内（<code>inline</code>）公式和区块（<code>block</code>）公式。 前者需要与同行的其它文字混排，而后者需要独占一行，居中显示。以下展示了两个行内公式和一个区块公式的测试代码。</p>
+<p>行内公式: \(ax^2 + bx + c = 0 \)</p>
+<p>$$x = {-b \pm \sqrt{b^2-4ac} \over 2a} \tag{1}$$</p>
+<h3 id="矩阵">矩阵</h3>
+<ul>
+<li>没有括号的矩阵</li>
+</ul>
+<div>
+$$
+  \begin{matrix}
+   1 & 2 & 3 \\
+   4 & 5 & 6 \\
+   7 & 8 & 9
+  \end{matrix} \tag{2}
+$$
+</div>
+<ul>
+<li>括号 <code>{}</code> 的矩阵</li>
+</ul>
+<div>
+$$
+ \begin{Bmatrix}
+   1 & 2 & 3 \\
+   4 & 5 & 6 \\
+   7 & 8 & 9
+  \end{Bmatrix} \tag{3}
+$$
+</div>
+<ul>
+<li>括号 <code>[]</code> 的矩阵</li>
+</ul>
+<div>
+$$
+ \begin{bmatrix}
+   1 & 2 & 3 \\
+   4 & 5 & 6 \\
+   7 & 8 & 9
+  \end{bmatrix} \tag{4}
+$$
+</div>
+<h3 id="对齐">对齐</h3>
+<p>使用 <code>{aligned}</code> 和 <code>&amp;</code> 标记要对齐的位置，否则每行的公式自身都是居中的。</p>
+<div>
+$$
+\bigg\lbrace\begin{aligned}
+& x = 16\sin^3t \\
+& y = 13\cos{t} - 5\cos{2t} - 2\cos{3t} - \cos{4t}
+\end{aligned} \tag{5}
+$$
+</div>
+<h3 id="上下标">上下标</h3>
+<p>$$
+\sum_{i=1}^n a_i \tag{6}
+$$</p>
+<h3 id="和积极限积分">和、积、极限、积分</h3>
+<p>$$
+\sum_{i=1}^n a_i \tag{7}
+$$</p>
+<p>$$
+\prod_{i=1}^n a_i \tag{8}
+$$</p>
+<p>$$
+\lim_{x\to\infty} {1 \over \sqrt{x}} \tag{9}
+$$</p>
+<p>$$
+\int_{-\infty}^\infty
+\hat f\xi,e^{2 \pi i \xi x}
+,d\xi \tag{10}
+$$</p>
+<p>$$
+\to \tag{11}
+$$</p>
+<h3 id="省略号空格">省略号、空格</h3>
+<p>$$
+\dots \quad \cdots \quad \vdots \quad \ddots \tag{12}
+$$</p>
+<h3 id="上下水平划线">上下水平划线</h3>
+<p>$$
+\overline{m+n} \quad \underline{m+n} \tag{13}
+$$</p>
+<h3 id="向量">向量</h3>
+<p>使用 <code>\vec</code> 语法。另两个命令 <code>\overrightarrow</code> 和 <code>\overleftarrow</code> 定义向量方向:</p>
+<p>$$
+\vec{a} \quad \overrightarrow{AB}  \quad   \overleftarrow{AB} \tag{14}
+$$</p>
+<h2 id="分数">分数</h2>
+<p>分数（<code>fraction</code>）使用 <code>\frac{...}{...}</code> 排版。</p>
+<p>$$
+\frac {x^2} {k +1} \tag{15}
+$$</p>
+
+    </div><div>
+    <p class="copyright">
+        本文的版权归作者<a href="/about/"> Chaoism </a>所有，采用 <a href="https://mit-license.org/">The MIT
+            License (MIT)</a>。任何人可以进行转载、分享，但不可在未经允许的情况下用于商业用途；转载请注明出处。感谢配合！
+    </p>
+</div>
+<div class="post_comments">
+  
+  
+  
 </div>
 
+
+
+
+  </article>
+<aside class="sidebar">
+  <section class="sidebar_inner">
+    <br>
+    
+  
+  <div class="search">
+    <input type="search" class="search_field form_field" placeholder='Search...' id="find" autocomplete="off" data-scope='post'>
+    <label for="find" class="search_label"><svg class="icon">
+  <title>search</title>
+  <use xlink:href="#search"></use>
+</svg>
+
+    </label>
+    
+    <div class="search_results results"></div>
+  </div>
+
+
+    
+    
+    <h2 class="mt-4">Recent Posts</h2>
+    <ul class="flex-column">
+      <li>
+        <a href="https://spkywood.github.io/post/sort-algorithm-cpp/" class="nav-link" title="几种排序算法的实现">几种排序算法的实现</a>
+      </li>
+    </ul>
+    <div>
+      <h2 class="mt-4 taxonomy" id="categories-section">Categories</h2>
+      <nav class="tags_nav">
+        <a href='https://spkywood.github.io/categories/%E6%95%B0%E5%AD%A6/' class="post_tag button button_translucent" title="数学">
+          数学
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://spkywood.github.io/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
+          算法
+          <span class="button_tally">1</span>
+        </a>
+        
+        
+      </nav>
+    </div>
+    <div>
+      <h2 class="mt-4 taxonomy" id="tags-section">Tags</h2>
+      <nav class="tags_nav">
+        <a href='https://spkywood.github.io/tags/c&#43;&#43;/' class="post_tag button button_translucent" title="c&#43;&#43;">
+          C&#43;&#43;
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://spkywood.github.io/tags/katex/' class="post_tag button button_translucent" title="katex">
+          KATEX
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://spkywood.github.io/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="排序算法">
+          排序算法
+          <span class="button_tally">1</span>
+        </a>
+        
+        
+      </nav>
+    </div>
+  </section>
+</aside>
+
+  
+</div>
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>

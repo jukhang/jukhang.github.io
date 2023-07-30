@@ -1,8 +1,8 @@
 
 <!DOCTYPE html>
-<html lang="en" data-figures="">
+<html lang="en" data-figures="true" class="page">
   <head>
-<title>404 Page not found | longfellow</title>
+<title>几种排序算法的实现 | longfellow</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,20 +10,20 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="" />
+<meta name="description" content="排序算法的C&#43;&#43;实现" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@green_pook">
-<meta name="twitter:title" content="404 Page not found" />
-<meta property="og:url" content="https://spkywood.github.io/404.html" />
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="" />
+<meta name="twitter:title" content="几种排序算法的实现" />
+<meta property="og:url" content="https://spkywood.github.io/post/sort-algorithm-cpp/" />
+<meta property="og:title" content="几种排序算法的实现" />
+<meta property="og:description" content="排序算法的C&#43;&#43;实现" />
 <meta property="og:image" content="https://spkywood.github.io/images/thumbnail.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://spkywood.github.io/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://spkywood.github.io/icons/favicon-32x32.png">
 <link rel="manifest" href="https://spkywood.github.io/icons/site.webmanifest">
 
-<link rel="canonical" href="https://spkywood.github.io/404.html">
+<link rel="canonical" href="https://spkywood.github.io/post/sort-algorithm-cpp/">
 
     
 
@@ -39,6 +39,7 @@
   </head>
   
   
+    
     
   
   <body data-code="100" data-lines="false" id="documentTop">
@@ -101,12 +102,146 @@
 </header>
 
     <main>
-<div class="never wrap">
-  <h1>Lost</h1>
-  <p class="pale">We couldn&#39;t find the page you&#39;re looking for</p><br>
-  <div class="button btn_back">Go Back</div>
+
+<div class="grid-inverse wrap content">
+  <article class="post_content">
+    <h1 class="post_title">几种排序算法的实现</h1>
+<div class="post_meta">
+  <span><svg class="icon">
+  <title>calendar</title>
+  <use xlink:href="#calendar"></use>
+</svg>
+</span>
+  <span class="post_date">
+    2023-07-30</span>
+  <span>&nbsp;· <a href='https://spkywood.github.io/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95' title="排序算法" class="post_tag button button_translucent">排序算法
+    </a><a href='https://spkywood.github.io/tags/c&#43;&#43;' title="C&#43;&#43;" class="post_tag button button_translucent">C&#43;&#43;
+    </a>
+  </span>
+</div>
+    <div class="post_body"><p>排序算法是最经典的算法知识。因为其实现代码短，应该广，在面试中经常会问到排序算法及其相关的问题。一般在面试中最常考的是快速排序和归并排序等基本的排序算法，并且经常要求现场手写基本的排序算法。</p>
+<ul>
+<li>排序算法稳定性：如果两个相等的数字，排序完成后，相对顺序不变，是稳定，否则是不稳定</li>
+<li>排序算法优化思路：减少比较次数，减少交换次数。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#pragma once 
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;utility&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">class</span> <span class="nc">MySort</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="kt">void</span> <span class="n">bubble</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="kt">void</span> <span class="nf">selection</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="kt">void</span> <span class="nf">insertion</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="kt">void</span> <span class="nf">quick</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="kt">void</span> <span class="nf">heap</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="kt">void</span> <span class="n">max_heapify</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><h1 id="1-冒泡排序">1. 冒泡排序</h1>
+<p>冒泡排序两层循环，内层循环依次比较相邻值的大小，将较大值依次向后交换，类似水中上浮的泡泡，逐渐变大，每次内层循环结束，最大值均出现在正确的位置。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kt">void</span> <span class="n">MySort</span><span class="o">::</span><span class="n">bubble</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="c1">// 内循环的边界是每次从0开始，结尾处减外循环 -1 防止溢出
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">              <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"></code></pre></div><h1 id="2-选择排序">2. 选择排序</h1>
+<h1 id="3-插入排序">3. 插入排序</h1>
+<h1 id="4-快速排序">4. 快速排序</h1>
+<h1 id="5-堆排序">5. 堆排序</h1>
+
+    </div><div>
+    <p class="copyright">
+        本文的版权归作者<a href="/about/"> Chaoism </a>所有，采用 <a href="https://mit-license.org/">The MIT
+            License (MIT)</a>。任何人可以进行转载、分享，但不可在未经允许的情况下用于商业用途；转载请注明出处。感谢配合！
+    </p>
+</div>
+<div class="post_comments">
+  
+  
+  
 </div>
 
+
+
+
+  </article>
+<aside class="sidebar">
+  <section class="sidebar_inner">
+    <br>
+    
+  
+  <div class="search">
+    <input type="search" class="search_field form_field" placeholder='Search...' id="find" autocomplete="off" data-scope='post'>
+    <label for="find" class="search_label"><svg class="icon">
+  <title>search</title>
+  <use xlink:href="#search"></use>
+</svg>
+
+    </label>
+    
+    <div class="search_results results"></div>
+  </div>
+
+
+    
+    
+    <h2 class="mt-4">Recent Posts</h2>
+    <ul class="flex-column">
+      <li>
+        <a href="https://spkywood.github.io/post/katex/" class="nav-link" title="数学公式常用写法">数学公式常用写法</a>
+      </li>
+    </ul>
+    <div>
+      <h2 class="mt-4 taxonomy" id="categories-section">Categories</h2>
+      <nav class="tags_nav">
+        <a href='https://spkywood.github.io/categories/%E6%95%B0%E5%AD%A6/' class="post_tag button button_translucent" title="数学">
+          数学
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://spkywood.github.io/categories/%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="算法">
+          算法
+          <span class="button_tally">1</span>
+        </a>
+        
+        
+      </nav>
+    </div>
+    <div>
+      <h2 class="mt-4 taxonomy" id="tags-section">Tags</h2>
+      <nav class="tags_nav">
+        <a href='https://spkywood.github.io/tags/c&#43;&#43;/' class="post_tag button button_translucent" title="c&#43;&#43;">
+          C&#43;&#43;
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://spkywood.github.io/tags/katex/' class="post_tag button button_translucent" title="katex">
+          KATEX
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://spkywood.github.io/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/' class="post_tag button button_translucent" title="排序算法">
+          排序算法
+          <span class="button_tally">1</span>
+        </a>
+        
+        
+      </nav>
+    </div>
+  </section>
+</aside>
+
+  
+</div>
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
