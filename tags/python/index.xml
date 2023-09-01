@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on longfellow</title>
+    <link>https://spkywood.github.io/tags/python/</link>
+    <description>Recent content in Python on longfellow</description>
+    <generator>Chaoism - chaoism.github.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2017–2023, longfellow &amp; Hugo; all rights reserved.</copyright>
+    <lastBuildDate>Wed, 30 Aug 2023 14:13:07 +0800</lastBuildDate><atom:link href="https://spkywood.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>网络编程模型</title>
+      <link>https://spkywood.github.io/post/network_program/</link>
+      <pubDate>Wed, 30 Aug 2023 14:13:07 +0800</pubDate>
+      
+      <guid>https://spkywood.github.io/post/network_program/</guid>
+      <description>
+        
+          
+            Insert Lead paragraph here.
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

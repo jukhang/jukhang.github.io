@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据结构 on longfellow</title>
+    <link>https://spkywood.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+    <description>Recent content in 数据结构 on longfellow</description>
+    <generator>Chaoism - chaoism.github.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2017–2023, longfellow &amp; Hugo; all rights reserved.</copyright>
+    <lastBuildDate>Wed, 30 Aug 2023 13:39:26 +0800</lastBuildDate><atom:link href="https://spkywood.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据结构之并查集</title>
+      <link>https://spkywood.github.io/post/union_find_set/</link>
+      <pubDate>Wed, 30 Aug 2023 13:39:26 +0800</pubDate>
+      
+      <guid>https://spkywood.github.io/post/union_find_set/</guid>
+      <description>
+        
+          
+            并查集是一种用于管理元素所属集合的数据结构，实现为一个森林，其中每棵树表示一个集合，树中的节点表示对应集合中的元素。用于解决图的连通性问题，即给定一个无向图，要求判断某两个元素之间是否存在相连的路径（连通）。
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -7,7 +7,39 @@
     <generator>Chaoism - chaoism.github.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2017–2023, longfellow &amp; Hugo; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 30 Jul 2023 07:46:07 +0800</lastBuildDate><atom:link href="https://spkywood.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Sep 2023 14:25:37 +0800</lastBuildDate><atom:link href="https://spkywood.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算机网络协议之TCP</title>
+      <link>https://spkywood.github.io/post/network_tcp/</link>
+      <pubDate>Fri, 01 Sep 2023 14:25:37 +0800</pubDate>
+      
+      <guid>https://spkywood.github.io/post/network_tcp/</guid>
+      <description>
+        
+          
+            传输控制协议（英语：Transmission Control Protocol，缩写：TCP）是一种面向连接的、可靠的、基于字节流的传输层通信协议，由IETF的RFC 793定义。在简化的计算机网络OSI模型中，它完成第四层传输层所指定的功能。
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>数据结构之并查集</title>
+      <link>https://spkywood.github.io/post/union_find_set/</link>
+      <pubDate>Wed, 30 Aug 2023 13:39:26 +0800</pubDate>
+      
+      <guid>https://spkywood.github.io/post/union_find_set/</guid>
+      <description>
+        
+          
+            并查集是一种用于管理元素所属集合的数据结构，实现为一个森林，其中每棵树表示一个集合，树中的节点表示对应集合中的元素。用于解决图的连通性问题，即给定一个无向图，要求判断某两个元素之间是否存在相连的路径（连通）。
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>几种排序算法的实现</title>
       <link>https://spkywood.github.io/post/sort-algorithm-cpp/</link>
